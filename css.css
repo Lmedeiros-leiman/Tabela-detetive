@@ -1,0 +1,66 @@
+* {
+  box-sizing: content-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-width: auto ;
+  max-width: fit-content;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  overflow-x: hidden;
+}
+
+.nometabela {
+
+
+  background-color: black;
+  color: whitesmoke;
+  text-align: center;
+  font-size: xxx-large;
+  width: 100vw;
+
+  content: "";
+}
+section{
+  width: 100%;
+
+}
+.conteudotabela{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  width: 100%;
+}
+button{
+  width: 50px;
+  height: 50px;
+}
+.item{
+  background-color: black;
+  color: whitesmoke;
+  width: 20%;
+  text-align: center;
+  font-size: xx-large;
+
+}
+div section:last-of-type .item{
+  padding-bottom: 5vh;
+}
+.botoes{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+}
+.botoes button{
+  width: calc(100%/4 - 1rem);
+  margin: 0;
+  padding: 0;
+
+}
