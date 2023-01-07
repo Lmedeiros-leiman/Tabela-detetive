@@ -8,7 +8,7 @@
     <title>Tabela Detetive</title>
 </head>
 <body>
-    <div class="nometabela">Anotações do investigador</div>
+    <div class="nometabela">Anotações do investigador <button>Reiniciar</button></div>
 <div class="nometabela">Convidado</div>
     <div>
     <section>
@@ -90,13 +90,14 @@
         </div>
     </section>
     </div>
-    <div class="nometabela">Arma</div>
 
+
+<div class="nometabela">Arma</div>
     <div>
     <section>
         <div class="conteudotabela">
             <div class="item">
-                Mostarda
+                Faca
             </div>
             <div class="botoes">
                 <button></button>
@@ -109,7 +110,7 @@
     <section>
         <div class="conteudotabela">
             <div class="item">
-                Plum
+                Castiçal
             </div>
             <div class="botoes">
                 <button></button>
@@ -122,7 +123,7 @@
     <section>
         <div class="conteudotabela">
             <div class="item">
-                Green
+                Revólver
             </div>
             <div class="botoes">
                 <button></button>
@@ -135,7 +136,7 @@
     <section>
         <div class="conteudotabela">
             <div class="item">
-                Peacock
+                Veneno
             </div>
             <div class="botoes">
                 <button></button>
@@ -148,7 +149,7 @@
     <section>
         <div class="conteudotabela">
             <div class="item">
-                Scarlet
+                Corda
             </div>
             <div class="botoes">
                 <button></button>
@@ -161,7 +162,7 @@
     <section>
         <div class="conteudotabela">
             <div class="item">
-                White
+                Halteres
             </div>
             <div class="botoes">
                 <button></button>
@@ -172,13 +173,12 @@
         </div>
     </section>
     </div>
-    <div class="nometabela">Arma</div>
-<div class="nometabela">Convidado</div>
+    <div class="nometabela">Cômodo</div>
     <div>
     <section>
         <div class="conteudotabela">
             <div class="item">
-                Mostarda
+                Hall
             </div>
             <div class="botoes">
                 <button></button>
@@ -191,7 +191,7 @@
     <section>
         <div class="conteudotabela">
             <div class="item">
-                Plum
+                Sala de Jantar
             </div>
             <div class="botoes">
                 <button></button>
@@ -204,7 +204,7 @@
     <section>
         <div class="conteudotabela">
             <div class="item">
-                Green
+                Cozinha
             </div>
             <div class="botoes">
                 <button></button>
@@ -217,7 +217,7 @@
     <section>
         <div class="conteudotabela">
             <div class="item">
-                Peacock
+                Pátio
             </div>
             <div class="botoes">
                 <button></button>
@@ -230,7 +230,7 @@
     <section>
         <div class="conteudotabela">
             <div class="item">
-                Scarlet
+                Observatório
             </div>
             <div class="botoes">
                 <button></button>
@@ -243,7 +243,46 @@
     <section>
         <div class="conteudotabela">
             <div class="item">
-                White
+                Teatro
+            </div>
+            <div class="botoes">
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </div>
+        </div>
+    </section>
+        <section>
+        <div class="conteudotabela">
+            <div class="item">
+                Sala de estar
+            </div>
+            <div class="botoes">
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </div>
+        </div>
+    </section>
+        <section>
+        <div class="conteudotabela">
+            <div class="item">
+                Spa
+            </div>
+            <div class="botoes">
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </div>
+        </div>
+    </section>
+        <section>
+        <div class="conteudotabela">
+            <div class="item">
+                Casa de Hóspedes
             </div>
             <div class="botoes">
                 <button></button>
@@ -254,23 +293,45 @@
         </div>
     </section>
     </div>
-    <div class="nometabela">Arma</div>
 
-        
+<div class="nometabela"></div>
+<div class="barralado">
+
+</div>
 
 </body>
 
 
 <script>
     // <button onclick="alterarestado(this)"> Pessoa1 </button>
-    function alterarestado(elemento) 
+
+    let botoes = document.querySelectorAll("button");
+    botoes.forEach((botao,index) => {
+        if (index == 0) {
+            botao.addEventListener("click", (evt) => {
+                reiniciar(botao,evt);
+            });
+        }
+        else {
+            botao.addEventListener("click", (evt) => {
+                alterarestado(botao, evt)
+            }, false);
+        }
+    });
+
+    function reiniciar(){
+        botoes.forEach((botao) =>{
+            botao.style.backgroundColor = ""
+        });
+    }
+    function alterarestado(elemento,evento)
     {
         var corfundo = elemento.style.backgroundColor;
         //console.log("cor de fundo:" +corfundo);
         switch (corfundo) 
         {
             
-            case "dodgerblue":
+            case "":
             elemento.style.backgroundColor = "orange";
             
                 break;
@@ -282,10 +343,16 @@
             case "mediumSeaGreen":
                 elemento.style.backgroundColor = "dodgerblue";
                 break;
+                 case "dodgerblue":
+                elemento.style.backgroundColor = "black";
+                break;
+                 case "black":
+                elemento.style.backgroundColor = "";
+                break;
             default:
                 elemento.style.backgroundColor = "dodgerblue";
             break;
-            console.log("Trocado com sucesso. final");
+
         }
         
         
@@ -295,5 +362,4 @@
 
 
 </script>
-
 </html>
